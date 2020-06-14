@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="newindex.css">
+    <script defer src="newindex.js"></script>
+  </head>
+
+  <body>
+    <!--header-->
+    <h1 class="title">Tasks I need to do</h1>
+    <!--div for different types of list like personal,work-->
+    <div class="all-tasks">
+        <h2 class="task-list-title">My Lists</h2>
+        <ul class="task-list" data-lists>
+        </ul>
+        <!--form to add different types of list-->
+        <form action="" data-new-list-form>
+            <input type="text" class="new list" data-new-list-input placeholder="new list name" aria-label="new list name">
+            <button class="btn create" aria-label="create new list">+</button>
+        </form>
+    </div>
+    <!--todo list of each specific category-->
+    <div class="todo-list" data-list-display-container>
+        <!--todo header-->
+        <div class="todo-header">
+            <h2 class="list-title" data-list-title>Todo List</h2>
+            <p class="task-count" data-list-count>0 tasks remaining</p>
+        </div>
+        <!--todo-body-->
+        <div class="todo-body">
+            <div class="tasks" data-tasks>
+            </div>
+            <!--section to create new task -->
+            <div class="new-task-creator">
+                <!--form to add new task to the specific todo list-->
+                <form action="" data-new-task-form>
+                    <input type="text" data-new-task-input class="new task" placeholder="new task name" aria-label="new task name">
+                    <button class="btn create" aria-label="create new task">+</button>
+                </form>
+            </div>
+            <!--section to add buttons to delete tasks-->
+            <div class="delete-stuff">
+                <!--button to clear completed tasks-->
+                <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
+                <!--button to delete the entire list-->
+                <button class="btn delete" data-delete-list-button>Delete list</button>
+            </div>
+        </div>
+    </div>
+    <!--template for each task to be used in js-->
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox">
+            <label>
+                <span class="custom-checkbox"></span>
+            </label>
+        </div>
+    </template>
+  </body>
+</html>
